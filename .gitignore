@@ -1,2 +1,17 @@
 # Project exclude paths
 /target/
+/saves/
+/src/main/archive/
+/src/main/resources/levels/templates/
+/src/main/java/com/unipi/alexandris/game/echotrials/LevelBuilder.java
+/src/main/resources/sounds/whawhwawhat.mp3
+/src/main/resources/sounds/whawhwawhat.ogg
+/src/main/resources/sounds/whawhwawhat.wav
+/src/main/resources/sounds/Water Monster Grawls.mp3
+/EchoTrials-setup.xml
+/EchoTrials.aip
+/EchoTrials.back(21.7.1).aip
+/README.rtf
+/SETUP-INSTRUCTIONS.txt
+/archived/
+/dependency-reduced-pom.xml

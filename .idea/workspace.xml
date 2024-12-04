@@ -4,7 +4,67 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32e0778f-5b4c-44bb-bc21-86f9169f2e83" name="Changes" comment="" />
+    <list default="true" id="32e0778f-5b4c-44bb-bc21-86f9169f2e83" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Echo Trials.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/Camera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/ID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/LevelID.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/SpriteSheet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/UserFiles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/BackButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/GUIButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/HighScoreButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/LoginForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/Window.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/handlers/Handler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/handlers/TriggerHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/loaders/BufferedImageLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/loaders/LevelLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/loaders/SoundFXLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/physics/ParticleCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/physics/Particles.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/physics/PhysicsPlatformer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Background.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Block.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/ButtonBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Foreground.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/GameObject.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/MovingBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/PortalBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/SpikeBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/TrapBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/TriggerBlock.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Water.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/KeyInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/MouseInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/brick1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/brick2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/loading_screen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/MASHLE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Echo_Trials.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/core/GameObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/core/Handler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/core/ID.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/core/Player.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/core/Window.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/sensors/KeyInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/sensors/MouseInput.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/sensors/MouseMotionSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/MouseMotionSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/sensors/MouseWheelInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/MouseWheelInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/util/BufferedImageLoader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/util/Camera.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +73,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -20,24 +82,51 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AnthonyAl&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AnthonyAl/MASHLE.git&quot;,
+    &quot;accountId&quot;: &quot;4cde5b8c-d358-47e0-88bb-2495177795cf&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
   <component name="ProjectId" id="2bcwdJ2nfsVFjM9W8ChoXZburG2" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Application.Echo Trials.executor": "Run",
+    "Application.LevelBuilder.executor": "Run",
+    "Application.Terraformar.executor": "Run",
+    "Maven.Echo Trials.executor": "Run",
+    "Maven.Terraformar.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "20",
-    "last_opened_file_path": "C:/Users/Tonius/IdeaProjects/untitled1/src/main/java/com/unipi/alexandris/game/MASHLE/core",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Tonius/IdeaProjects/EchoTrials",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -45,22 +134,58 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tonius\IdeaProjects\Terraformar\src\main\java\com\unipi\alexandris\game\terraformar\physics" />
+      <recent name="C:\Users\Tonius\IdeaProjects\Terraformar\src\main\java\com\unipi\alexandris\game\terraformar\environment" />
+      <recent name="C:\Users\Tonius\IdeaProjects\Terraformar\src\main\java\com\unipi\alexandris\game\terraformar\gui" />
+      <recent name="C:\Users\Tonius\IdeaProjects\MASHLE" />
       <recent name="C:\Users\Tonius\IdeaProjects\untitled1\src\main\java\com\unipi\alexandris\game\MASHLE\core" />
-      <recent name="C:\Users\Tonius\IdeaProjects\untitled1\src\main\java\com\unipi\alexandris\game\MASHLE\util" />
-      <recent name="C:\Users\Tonius\IdeaProjects\untitled1\src\main\java\com\unipi\alexandris\game\MASHLE\sensors" />
-      <recent name="C:\Users\Tonius\IdeaProjects\MASHLE\untitled\src\main\java\com\alexandris\MASHLE" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tonius\IdeaProjects\Terraformar\src\main" />
+      <recent name="C:\Users\Tonius\IdeaProjects\Terraformar" />
+      <recent name="C:\Users\Tonius\IdeaProjects\MASHLE\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="com.unipi.alexandris.game.MASHLE" />
+      <recent name="com.unipi.alexandris.game.terraformar.base.core" />
+      <recent name="com.unipi.alexandris.game.terraformar.base.gui" />
+      <recent name="com.unipi.alexandris.game.terraformar.base.pages" />
+      <recent name="com.unipi.alexandris.game.terraformar" />
+      <recent name="com.unipi.alexandris.game.terraformar.core" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.unipi.alexandris.game.terraformar.base.roomobjects" />
+      <recent name="com.unipi.alexandris.game.terraformar.roomobjects" />
+      <recent name="com.unipi.alexandris.game.terraformar.environment" />
+      <recent name="com.unipi.alexandris.game.terraformar.core" />
+      <recent name="com.unipi.alexandris.game.terraformar.util" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.MASHLE">
+  <component name="RunManager" selected="Maven.Echo Trials">
+    <configuration name="LevelBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.unipi.alexandris.game.echotrials.LevelBuilder" />
+      <module name="EchoTrials" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.unipi.alexandris.game.echotrials.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Unnamed" type="JarApplication" nameIsGenerated="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/Terraformar-1.0-SNAPSHOT.jar" />
+      <option name="WORKING_DIRECTORY" value="C:\Users\Tonius\IdeaProjects\Terraformar" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="MASHLE_deprecated" />
       <method v="2">
@@ -74,7 +199,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MASHLE" type="MavenRunConfiguration" factoryName="Maven">
+    <configuration name="Echo Trials" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
         <option name="myRunnerSettings" />
@@ -90,6 +215,7 @@
                 <option value="package" />
               </list>
             </option>
+            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
@@ -98,16 +224,23 @@
               <list />
             </option>
             <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="C:\Users\Tonius\IdeaProjects\MASHLE" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
           </MavenRunnerParameters>
         </option>
       </MavenSettings>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.MASHLE" />
-      <item itemvalue="Maven.MASHLE" />
+      <item itemvalue="Application.Echo Trials" />
+      <item itemvalue="Application.LevelBuilder" />
+      <item itemvalue="JAR Application.Unnamed" />
+      <item itemvalue="Maven.Echo Trials" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.LevelBuilder" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -119,11 +252,67 @@
       <updated>1706527760239</updated>
       <workItem from="1706527761300" duration="2515000" />
       <workItem from="1706530624090" duration="97000" />
-      <workItem from="1706530815117" duration="1083000" />
+      <workItem from="1706530815117" duration="4626000" />
+      <workItem from="1706567121105" duration="1999000" />
+      <workItem from="1706570866532" duration="87000" />
+      <workItem from="1706617009399" duration="850000" />
+      <workItem from="1706618311904" duration="3632000" />
+      <workItem from="1707073253809" duration="3319000" />
+      <workItem from="1711919638728" duration="639000" />
+      <workItem from="1717058195753" duration="6890000" />
+      <workItem from="1717099984908" duration="152000" />
+      <workItem from="1717577675094" duration="9115000" />
+      <workItem from="1717672942434" duration="926000" />
+      <workItem from="1717861180573" duration="7776000" />
+      <workItem from="1717936940354" duration="19569000" />
+      <workItem from="1717963767442" duration="11047000" />
+      <workItem from="1717976829432" duration="10000" />
+      <workItem from="1718011848834" duration="2145000" />
+      <workItem from="1718113364525" duration="25981000" />
+      <workItem from="1718153053050" duration="1043000" />
+      <workItem from="1718183278697" duration="11842000" />
+      <workItem from="1718222896099" duration="8829000" />
+      <workItem from="1718270473752" duration="4359000" />
+      <workItem from="1718316185209" duration="13280000" />
+      <workItem from="1718361016630" duration="4917000" />
+      <workItem from="1718398319598" duration="15284000" />
+      <workItem from="1718443466880" duration="15776000" />
+      <workItem from="1718459604053" duration="3039000" />
+      <workItem from="1718537255433" duration="13014000" />
+      <workItem from="1718581847867" duration="744000" />
+      <workItem from="1718706406370" duration="11252000" />
+      <workItem from="1718790265321" duration="9299000" />
+      <workItem from="1718835863527" duration="681000" />
+      <workItem from="1718878000048" duration="8163000" />
+      <workItem from="1718983491506" duration="370000" />
+      <workItem from="1719344599842" duration="962000" />
+      <workItem from="1719432905407" duration="2026000" />
+      <workItem from="1733273148444" duration="7000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" suspend="NONE" type="java-exception">
+          <log-expression expression="cause" language="JAVA" />
+          <properties class="java.util.ConcurrentModificationException" package="java.util" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/handlers/TriggerHandler.java</url>
+          <line>1198</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/handlers/TriggerHandler.java</url>
+          <line>1189</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

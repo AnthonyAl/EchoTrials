@@ -1,10 +1,10 @@
-package com.unipi.alexandris.game.MASHLE.sensors;
+package com.unipi.alexandris.game.echotrials.base.sensors;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 
-import com.unipi.alexandris.game.MASHLE.core.Handler;
-import  com.unipi.alexandris.game.MASHLE.Game;
+import com.unipi.alexandris.game.echotrials.base.Game;
+import com.unipi.alexandris.game.echotrials.base.handlers.Handler;
 
 public class MouseMotionSensor extends MouseMotionAdapter {
 	
@@ -15,7 +15,7 @@ public class MouseMotionSensor extends MouseMotionAdapter {
 	}
 	
 	public void mouseMoved(MouseEvent e) {
-		Game.coordX = e.getX();
-		Game.coordY = e.getY();
+		Game.cursorX = e.getX();
+		Game.cursorY = e.getY();
 	}
 }

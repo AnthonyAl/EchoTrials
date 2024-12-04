@@ -1,8 +1,8 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="MASHLE" type="Application" factoryName="Application">
+  <configuration default="false" name="Echo Trials" type="Application" factoryName="Application">
     <option name="ALTERNATIVE_JRE_PATH" value="$USER_HOME$/.jdks/corretto-18.0.2" />
-    <option name="MAIN_CLASS_NAME" value="com.unipi.alexandris.game.MASHLE.Game" />
-    <module name="MASHLE" />
+    <option name="MAIN_CLASS_NAME" value="com.unipi.alexandris.game.echotrials.base.Game" />
+    <module name="EchoTrials" />
     <method v="2">
       <option name="Make" enabled="true" />
     </method>

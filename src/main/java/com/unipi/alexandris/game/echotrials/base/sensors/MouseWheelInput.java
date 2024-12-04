@@ -1,9 +1,10 @@
-package com.unipi.alexandris.game.MASHLE.sensors;
+package com.unipi.alexandris.game.echotrials.base.sensors;
 
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 
-import com.unipi.alexandris.game.MASHLE.core.*;
+import com.unipi.alexandris.game.echotrials.base.roomobjects.GameObject;
+import com.unipi.alexandris.game.echotrials.base.handlers.Handler;
 
 public class MouseWheelInput implements MouseWheelListener {
 	
