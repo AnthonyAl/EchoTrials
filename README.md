@@ -1,4 +1,4 @@
-# Echo Trials - README
+# Echo Trials
 
 ## Introduction
 Echo Trials is a unique 2D Java-based platformer that challenges your intuition, memory, and patience. While it may seem straightforward at first, this game is anything but ordinary. Each level introduces a distinct gimmick, teaching players how to navigate specific obstacles and sharpening their problem-solving skills in preparation for the ultimate challenge.
