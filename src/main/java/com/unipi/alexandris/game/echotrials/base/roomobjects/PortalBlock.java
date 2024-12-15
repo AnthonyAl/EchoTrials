@@ -11,21 +11,48 @@ import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.Objects;
 
+/**
+ * Portal block that enables level transitions and game progression.
+ * Handles player teleportation, visual effects, and level loading.
+ * Can be locked/unlocked to control player access to different game areas.
+ */
 public class PortalBlock extends GameObject {
 
+	/** Array of portal state images (normal/locked) */
 	private final BufferedImage[] images;
+
+	/** Counter for portal animation and transition timing */
 	private int portalDelayCounter = 0;
+
+	/** Flag indicating if portal is locked and inaccessible */
 	private boolean locked = true;
+
+	/** Text displayed above the portal */
 	private String title = "";
+
+	/** Target level for this portal */
 	private LevelID destination;
+
+	/** Sound effect manager for portal interactions */
 	SoundFXLoader sound = new SoundFXLoader();
 
+	/**
+	 * Creates a new portal block.
+	 * @param x X coordinate
+	 * @param y Y coordinate
+	 * @param id Object identifier
+	 * @param images Array of portal state images
+	 */
 	public PortalBlock(int x, int y, ID id, BufferedImage[] images) {
 		super(x, y, id);
 		size = 48;
 		this.images = images;
 	}
 
+	/**
+	 * Updates portal state and handles player interaction.
+	 * Manages level transitions and portal animations.
+	 */
 	@Override
 	public void tick() {
 		if(Game.player == null) return;
@@ -143,27 +170,50 @@ public class PortalBlock extends GameObject {
 		}
 	}
 
+	/**
+	 * Sets the portal's destination and display text.
+	 * @param text Text to display above portal
+	 * @param levelID Target level identifier
+	 */
 	public void setDestination(String text, LevelID levelID) {
 		this.title = text;
 		this.destination = levelID;
 	}
 
+	/**
+	 * Unlocks the portal, allowing level transition.
+	 */
 	public void unlock() {
 		locked = false;
 	}
 
+	/**
+	 * Locks the portal, preventing level transition.
+	 */
 	public void lock() {
 		locked = true;
 	}
 
+	/**
+	 * Gets the portal's display text.
+	 * @return Current portal title
+	 */
 	public String getTitle() {
 		return title;
 	}
 
+	/**
+	 * Gets the portal's destination level.
+	 * @return Target level identifier
+	 */
 	public LevelID getDestination() {
 		return destination;
 	}
 
+	/**
+	 * Renders the portal and its title text.
+	 * @param g Graphics context
+	 */
 	@Override
 	public void render(Graphics g) {
 
@@ -176,6 +226,13 @@ public class PortalBlock extends GameObject {
 		else g.drawImage(images[1], (int) x, (int) y - 8, size, size + 8, null);
 	}
 
+	/**
+	 * Helper method to draw centered text.
+	 * @param g Graphics context
+	 * @param text Text to draw
+	 * @param x X coordinate
+	 * @param y Y coordinate
+	 */
 	private void drawString(Graphics g, String text, int x, int y) {
 		FontMetrics fm   = g.getFontMetrics();
 		y -= text.split("\n").length * fm.getHeight();
@@ -190,15 +247,28 @@ public class PortalBlock extends GameObject {
 		}
 	}
 
+	/**
+	 * Gets portal's collision bounds.
+	 * @return Rectangle for basic collision
+	 */
 	@Override
 	public Rectangle getBounds() {
 		return new Rectangle((int) x, (int) y - 8, size, size + 8);
 	}
 
+	/**
+	 * Gets expanded collision bounds.
+	 * @param a Expansion amount
+	 * @return Expanded rectangle bounds
+	 */
 	public Rectangle getBounds(int a) {
 		return new Rectangle((int) x - a, (int) y - 8 - a, size + a*2, size + 8 + a*2);
 	}
 
+	/**
+	 * Gets portal's precise collision area.
+	 * @return Area for collision detection
+	 */
 	@Override
 	public Area getArea() {
 		return new Area(new Rectangle2D.Double(x, y - 8, size, size + 8));

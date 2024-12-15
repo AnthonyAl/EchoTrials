@@ -15,6 +15,12 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Random;
 
+/**
+ * The main player character controlled by user input.
+ * Features physics-based movement, collision detection, and state management.
+ * Handles player interactions with game objects, death conditions, and respawning.
+ * Supports customizable movement parameters and dynamic physics properties.
+ */
 public class Player extends GameObject {
 	private final Handler handler;
 	private final ParticleCreator pc;

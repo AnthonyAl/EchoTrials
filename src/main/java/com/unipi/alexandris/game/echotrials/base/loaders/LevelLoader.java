@@ -13,18 +13,54 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.*;
 
+/**
+ * The LevelLoader class handles loading and initialization of game levels.
+ * It manages:
+ * <ul>
+ *   <li>Level data deserialization from files</li>
+ *   <li>Game object initialization and placement</li>
+ *   <li>Background and foreground layer setup</li>
+ *   <li>Collision area configuration</li>
+ *   <li>Player and portal placement</li>
+ * </ul>
+ * This class is crucial for transitioning between different game levels.
+ */
 public class LevelLoader {
+	/** The main game object handler. */
 	private final Handler handler;
+	
+	/** Handler for level-specific triggers and interactions. */
 	private final TriggerHandler triggerHandler;
-	private final ArrayList<BufferedImage> backgroundImages = new ArrayList<>(); // The images for the background of the level.
+	
+	/** Collection of images used for level backgrounds. */
+	private final ArrayList<BufferedImage> backgroundImages = new ArrayList<>();
 
+	/**
+	 * Constructs a new LevelLoader with a reference to the game's object handler.
+	 * Initializes a new TriggerHandler for managing level-specific interactions.
+	 *
+	 * @param handler The main game object handler
+	 */
 	public LevelLoader(Handler handler) {
 		this.handler = handler;
 		triggerHandler = new TriggerHandler(handler);
 	}
 	
+	/**
+	 * Loads and initializes a game level from its serialized data file.
+	 * This method:
+	 * <ul>
+	 *   <li>Deserializes level data from resources</li>
+	 *   <li>Sets up collision areas and spawn points</li>
+	 *   <li>Creates background and foreground layers</li>
+	 *   <li>Places the player and portal objects</li>
+	 *   <li>Configures level-specific triggers</li>
+	 * </ul>
+	 *
+	 * @param levelID The identifier of the level to load
+	 * @return The loaded and initialized GameLevel object
+	 */
 	public GameLevel load(LevelID levelID) {
-
 		GameLevel gameLevel = null;
 
 		// Deserialization of the level

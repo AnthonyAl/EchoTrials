@@ -6,26 +6,73 @@ import com.unipi.alexandris.game.echotrials.base.loaders.SoundFXLoader;
 import java.awt.*;
 import java.awt.geom.Area;
 
+/**
+ * The PhysicsPlatformer class handles physics simulation for platforming mechanics.
+ * It manages:
+ * <ul>
+ *   <li>Movement physics with collision detection</li>
+ *   <li>Jumping and wall-jumping mechanics</li>
+ *   <li>Swimming and water physics</li>
+ *   <li>Surface-specific behavior (ice, blocks)</li>
+ *   <li>Sound effects for movement</li>
+ * </ul>
+ * This class is central to the game's platforming mechanics and player movement.
+ */
 @SuppressWarnings(value = "unused")
 public class PhysicsPlatformer {
 	
+	/** Wall-jump flags for left and right walls. */
 	private boolean wjl = true, wjr = true;
+	
+	/** Current velocity components. */
 	private double velx = 0, vely = 0;
+	
+	/** Return array for movement physics calculations. */
 	private final double[] ret = new double[4];
+	
+	/** Return array for swimming physics calculations. */
 	private final double[] ret2 = new double[5];
+	
+	/** Horizontal movement speed. */
 	private double speedX = 5;
+	
+	/** Vertical movement speed (jump height). */
 	private double speedY = 5;
+	
+	/** Gravity strength and direction. */
 	private double gravity = 1;
+	
+	/** Flag indicating if last jump was from ice surface. */
 	private boolean jumpedFromIce = false;
+	
+	/** Sound effect loader for movement audio. */
 	private SoundFXLoader soundFXLoader;
+	
+	/** Resource path for jump sound effect. */
 	private String jumpSoundPath;
 
+	/**
+	 * Constructs a PhysicsPlatformer with basic movement parameters.
+	 *
+	 * @param speedX Horizontal movement speed
+	 * @param speedY Vertical movement speed
+	 * @param gravity Gravity strength and direction
+	 */
 	public PhysicsPlatformer(double speedX, double speedY, double gravity) {
 		this.speedX = speedX;
 		this.speedY = speedY;
 		this.gravity = gravity;
 	}
 
+	/**
+	 * Constructs a PhysicsPlatformer with movement parameters and sound effects.
+	 *
+	 * @param speedX Horizontal movement speed
+	 * @param speedY Vertical movement speed
+	 * @param gravity Gravity strength and direction
+	 * @param soundFXLoader Sound effect loader
+	 * @param jumpSoundPath Path to jump sound resource
+	 */
 	public PhysicsPlatformer(double speedX, double speedY, double gravity, SoundFXLoader soundFXLoader, String jumpSoundPath) {
 		this.speedX = speedX;
 		this.speedY = speedY;
@@ -34,8 +81,26 @@ public class PhysicsPlatformer {
 		this.jumpSoundPath = jumpSoundPath;
 	}
 
+	/**
+	 * Default constructor with standard physics values.
+	 */
 	public PhysicsPlatformer() {}
 	
+	/**
+	 * Calculates movement physics for platforming.
+	 * Handles collision detection, wall-jumping, and surface effects.
+	 *
+	 * @param block Collision area for solid blocks
+	 * @param width Object width
+	 * @param height Object height
+	 * @param x Current X position
+	 * @param y Current Y position
+	 * @param w Up/jump input
+	 * @param s Down input
+	 * @param a Left input
+	 * @param d Right input
+	 * @return Array containing [new X, new Y, X velocity, Y velocity]
+	 */
 	public double[] movementPhysics(Area block, double width, double height, double x, double y, boolean w, boolean s, boolean a, boolean d) {
 		
 		if(width < 5) width = 5;
@@ -77,6 +142,21 @@ public class PhysicsPlatformer {
 		return ret;
 	}
 
+	/**
+	 * Helper method for handling walking and wall-jumping mechanics.
+	 * Manages movement on different surfaces and wall interactions.
+	 *
+	 * @param block Collision area for solid blocks
+	 * @param w Up/jump input
+	 * @param a Left input
+	 * @param d Right input
+	 * @param up Upper collision area
+	 * @param down Lower collision area
+	 * @param left Left collision area
+	 * @param right Right collision area
+	 * @param speedX Movement speed in X direction
+	 * @param v Velocity value
+	 */
 	private void walk(Area block, boolean w, boolean a, boolean d, Area up, Area down, Area left, Area right, double speedX, double v) {
 		Area iceDown = new Area(down);
 		Area iceLeft = new Area(left);
@@ -152,6 +232,15 @@ public class PhysicsPlatformer {
 		}
 	}
 
+	/**
+	 * Helper method for handling gravity and jumping mechanics.
+	 * Manages vertical movement and jump sound effects.
+	 *
+	 * @param block Collision area for solid blocks
+	 * @param w Up/jump input
+	 * @param a First collision area to check
+	 * @param b Second collision area to check
+	 */
 	private void assertGravity(Area block, boolean w, Area a, Area b) {
 		a.intersect(block);
 		if (a.isEmpty()) {
@@ -170,6 +259,22 @@ public class PhysicsPlatformer {
 		}
 	}
 
+	/**
+	 * Calculates physics for swimming movement.
+	 * Handles buoyancy, water resistance, and underwater controls.
+	 *
+	 * @param block Collision area for solid blocks
+	 * @param water Collision area for water
+	 * @param width Object width
+	 * @param height Object height
+	 * @param x Current X position
+	 * @param y Current Y position
+	 * @param w Up input
+	 * @param s Down input
+	 * @param a Left input
+	 * @param d Right input
+	 * @return Array containing [new X, new Y, X velocity, Y velocity]
+	 */
 	public double[] swimmingPhysics(Area block, Area water, double width, double height, double x, double y, boolean w, boolean s, boolean a, boolean d) {
 
 		if(width < 2) width = 2;
@@ -211,12 +316,32 @@ public class PhysicsPlatformer {
 		return ret;
 	}
 
+	/**
+	 * Calculates a point on a line using linear interpolation.
+	 *
+	 * @param x X coordinate to calculate for
+	 * @param x1 First point X coordinate
+	 * @param y1 First point Y coordinate
+	 * @param x2 Second point X coordinate
+	 * @param y2 Second point Y coordinate
+	 * @return Y coordinate at the given X position
+	 */
 	public static double line(double x, double x1, double y1, double x2, double y2) {
 		double l = (y2 - y1) / (x2 - x1);
 		double b = y2 - l * x2;
 		return l * x + b;
 	}
 	
+	/**
+	 * Creates a Rectangle with the specified dimensions.
+	 * Helper method for collision area creation.
+	 *
+	 * @param a X coordinate
+	 * @param b Y coordinate
+	 * @param c Width
+	 * @param d Height
+	 * @return Rectangle with the specified dimensions
+	 */
 	public Rectangle getRectangle(double a, double b, double c, double d) {
 		return new Rectangle((int) a,(int) b, (int) c, (int) d);
 	}

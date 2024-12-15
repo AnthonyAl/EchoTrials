@@ -9,18 +9,55 @@ import com.unipi.alexandris.game.echotrials.base.core.LevelID;
 import com.unipi.alexandris.game.echotrials.base.handlers.Handler;
 import com.unipi.alexandris.game.echotrials.base.roomobjects.GameObject;
 
+/**
+ * The KeyInput class handles keyboard input events for the game.
+ * It processes:
+ * <ul>
+ *   <li>Player movement controls (WASD and arrow keys)</li>
+ *   <li>Game control shortcuts (ESC, F11, H)</li>
+ *   <li>Object-specific interactions</li>
+ * </ul>
+ * This class extends KeyAdapter to receive and process keyboard events.
+ */
 public class KeyInput extends KeyAdapter {
 	
+	/** Handler for managing game objects */
 	private final Handler handler;
+	
+	/** Reference to the main game instance */
 	private final Game game;
+	
+	/** Temporary object reference for input processing */
 	private GameObject tempObject;
 	
+	/**
+	 * Constructs a new KeyInput handler.
+	 *
+	 * @param game The main game instance
+	 * @param handler The game object handler
+	 */
 	public KeyInput(Game game, Handler handler) {
 		this.game = game;
 		this.handler = handler;
 	}
 
-	
+	/**
+	 * Handles key press events.
+	 * Processes:
+	 * <ul>
+	 *   <li>Movement controls for Player objects</li>
+	 *   <li>Interaction controls for Goal and Spike objects</li>
+	 *   <li>Game control shortcuts:
+	 *     <ul>
+	 *       <li>ESC - Exit or restart level</li>
+	 *       <li>F11 - Toggle fullscreen</li>
+	 *       <li>H - View high scores</li>
+	 *     </ul>
+	 *   </li>
+	 * </ul>
+	 *
+	 * @param e The key event to process
+	 */
 	public void keyPressed(KeyEvent e) {
 		int key = e.getKeyCode();	
 		for(int i = 0; i < handler.getObject().size(); i++) {
@@ -58,7 +95,17 @@ public class KeyInput extends KeyAdapter {
 			if(Game.currentLevel == LevelID.LEVEL_SELECTOR) Game.getHighScores();
 	}
 	
-	
+	/**
+	 * Handles key release events.
+	 * Stops movement or interactions when control keys are released.
+	 * Affects:
+	 * <ul>
+	 *   <li>Player movement controls</li>
+	 *   <li>Spike object interactions</li>
+	 * </ul>
+	 *
+	 * @param e The key event to process
+	 */
 	public void keyReleased(KeyEvent e) {
 		int key = e.getKeyCode();	
 		for(int i = 0; i < handler.getObject().size(); i++) {

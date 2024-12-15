@@ -12,10 +12,37 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Manages and coordinates trigger-based events and interactions in the game.
+ * This handler is responsible for:
+ * - Managing trigger zones and their associated actions
+ * - Scheduling and executing timed trigger events
+ * - Coordinating level-specific trigger mechanics
+ * - Handling button and trap block interactions
+ * - Managing moving platform synchronization
+ * - Controlling spike trap activation sequences
+ * 
+ * The handler maintains a mapping between trigger blocks and their actions,
+ * supports delayed and repeated trigger activations, and provides mechanisms
+ * for both immediate and scheduled event execution.
+ */
 public class TriggerHandler {
+    /** Game object handler for managing entities */
     private final Handler handler;
+
+    /**
+     * Record for storing button size configuration.
+     * Used to define button dimensions for different button types.
+     */
     public record ButtonSizeSetting(ButtonBlock.ButtonType type, double width, double height) {}
+
+    /**
+     * Record for storing button movement parameters.
+     * Defines physics properties for different button types.
+     */
     public record ButtonMovementSetting(ButtonBlock.ButtonType type, double speed, double jump, double gravity) {}
+
+    /** Maps trigger blocks to their associated actions */
     private final HashMap<TriggerBlock, Runnable> triggerActions = new HashMap<>();
 
     public TriggerHandler(Handler handler) {
@@ -440,10 +467,10 @@ public class TriggerHandler {
                         ID.MovingBlock, Game.gameImages.movingBlockImages()[0]);
                 MovingBlock finalTempBlock = tempBlock;
                 tempBlock.setMovement(() -> {
-                                Game.player.removeObstructions(finalTempBlock.getArea());
-                                finalTempBlock.moveY(-48);
-                                Game.player.addExtraObstructions(finalTempBlock.getArea());
-                            });
+                    Game.player.removeObstructions(finalTempBlock.getArea());
+                    finalTempBlock.moveY(-48);
+                    Game.player.addExtraObstructions(finalTempBlock.getArea());
+                });
                 handler.addObject(tempBlock);
                 movingBlocks.add(tempBlock);
                 Game.player.addExtraObstructions(tempBlock.getArea());
@@ -1356,10 +1383,10 @@ public class TriggerHandler {
 
                 // Register Spike Blocks
                 for(int[] j : gameLevel.spikeBlockCoords()) {
-                        SpikeBlock tempBlock = new SpikeBlock(j[0], j[1], ID.Spike, Game.gameImages.spikeBlockImages(), handler);
-                        handler.addObject(tempBlock);
-                        tempBlock.arise();
-                        tempBlock.setCancelUP(false);
+                    SpikeBlock tempBlock = new SpikeBlock(j[0], j[1], ID.Spike, Game.gameImages.spikeBlockImages(), handler);
+                    handler.addObject(tempBlock);
+                    tempBlock.arise();
+                    tempBlock.setCancelUP(false);
                 }
             }
             case LEVEL_E_V -> {

@@ -1,69 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Selected directory" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="32e0778f-5b4c-44bb-bc21-86f9169f2e83" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Echo Trials.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/Camera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/ID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/LevelID.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/SpriteSheet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/UserFiles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/BackButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/GUIButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/HighScoreButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/LoginForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/Window.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/handlers/Handler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/handlers/TriggerHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/loaders/BufferedImageLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/loaders/LevelLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/loaders/SoundFXLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/physics/ParticleCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/physics/Particles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/physics/PhysicsPlatformer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Background.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Block.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/ButtonBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Foreground.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/GameObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/MovingBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/PortalBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/SpikeBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/TrapBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/TriggerBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Water.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/KeyInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/MouseInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/brick1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/brick2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/textures/loading_screen.png" afterDir="false" />
+    <list default="true" id="32e0778f-5b4c-44bb-bc21-86f9169f2e83" name="Changes" comment="This commit basically represents the first commit to GitHub.&#10;The project is shared in the platform after development of 1.0-BETA version has finished. Future developments will be documented through dedicated commits.">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/MASHLE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Echo_Trials.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/core/GameObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/core/Handler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/core/ID.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/core/Player.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/core/Window.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/sensors/KeyInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/sensors/MouseInput.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/sensors/MouseMotionSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/MouseMotionSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/sensors/MouseWheelInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/MouseWheelInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/util/BufferedImageLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/MASHLE/util/Camera.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/ID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/ID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/LevelID.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/LevelID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/SpriteSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/core/SpriteSheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/BackButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/BackButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/GUIButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/GUIButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/HighScoreButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/HighScoreButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/LoginForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/gui/Window.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/handlers/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/handlers/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/handlers/TriggerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/handlers/TriggerHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/loaders/BufferedImageLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/loaders/BufferedImageLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/loaders/LevelLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/loaders/LevelLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/loaders/SoundFXLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/loaders/SoundFXLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/physics/ParticleCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/physics/ParticleCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/physics/Particles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/physics/Particles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/physics/PhysicsPlatformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/physics/PhysicsPlatformer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Background.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/ButtonBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/ButtonBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Foreground.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Foreground.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/GameObject.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/GameObject.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/MovingBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/MovingBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/PortalBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/PortalBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/SpikeBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/SpikeBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/TrapBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/TrapBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/TriggerBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/TriggerBlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/roomobjects/Water.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/KeyInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/KeyInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/MouseInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/MouseInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/MouseMotionSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/MouseMotionSensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/MouseWheelInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/sensors/MouseWheelInput.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,35 +91,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "Application.Echo Trials.executor": "Run",
-    "Application.LevelBuilder.executor": "Run",
-    "Application.Terraformar.executor": "Run",
-    "Maven.Echo Trials.executor": "Run",
-    "Maven.Terraformar.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "20",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Tonius/IdeaProjects/EchoTrials",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Application.Echo Trials.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LevelBuilder.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Terraformar.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Echo Trials.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Terraformar.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;20&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tonius/IdeaProjects/EchoTrials&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Tonius\IdeaProjects\Terraformar\src\main\java\com\unipi\alexandris\game\terraformar\physics" />
@@ -166,7 +148,7 @@
       <recent name="com.unipi.alexandris.game.terraformar.util" />
     </key>
   </component>
-  <component name="RunManager" selected="Maven.Echo Trials">
+  <component name="RunManager" selected="Application.Echo Trials">
     <configuration name="LevelBuilder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.unipi.alexandris.game.echotrials.LevelBuilder" />
       <module name="EchoTrials" />
@@ -215,7 +197,6 @@
                 <option value="package" />
               </list>
             </option>
-            <option name="multimoduleDir" />
             <option name="pomFileName" />
             <option name="profilesMap">
               <map />
@@ -288,11 +269,40 @@
       <workItem from="1719344599842" duration="962000" />
       <workItem from="1719432905407" duration="2026000" />
       <workItem from="1733273148444" duration="7000" />
+      <workItem from="1734155179795" duration="1452000" />
+      <workItem from="1734191996760" duration="1358000" />
+      <workItem from="1734193361765" duration="632000" />
+      <workItem from="1734243227910" duration="109000" />
+      <workItem from="1734243568855" duration="7285000" />
     </task>
+    <task id="LOCAL-00001" summary="This commit basically represents the first commit to GitHub.&#10;The project is shared in the platform after development of 1.0-BETA version has finished. Future developments will be documented through dedicated commits.">
+      <option name="closed" value="true" />
+      <created>1733276592375</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733276592375</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="This commit basically represents the first commit to GitHub.&#10;The project is shared in the platform after development of 1.0-BETA version has finished. Future developments will be documented through dedicated commits." />
+    <option name="LAST_COMMIT_MESSAGE" value="This commit basically represents the first commit to GitHub.&#10;The project is shared in the platform after development of 1.0-BETA version has finished. Future developments will be documented through dedicated commits." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -304,13 +314,8 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/handlers/TriggerHandler.java</url>
-          <line>1198</line>
+          <line>1421</line>
           <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/unipi/alexandris/game/echotrials/base/handlers/TriggerHandler.java</url>
-          <line>1189</line>
-          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -8,11 +8,17 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Manages the game's background layer and parallax scrolling effects.
+ * Provides visual depth through layered background images.
+ * Supports camera-based movement and scaling.
+ */
 public class Background extends GameObject {
 
 	BufferedImage background;
 	ArrayList<char[][]> maps;
 	ArrayList<BufferedImage> images;
+
 
 	public Background(int x, int y, ID id, ArrayList<BufferedImage> images, ArrayList<char[][]> maps, int multiplier, int width, int height) {
 		super(x, y, id);
@@ -40,22 +46,51 @@ public class Background extends GameObject {
 		g.dispose();
 	}
 
+	/**
+	 * Updates background position based on camera movement.
+	 * Applies parallax scrolling effect.
+	 */
 	@Override
 	public void tick() {
 		// TODO Auto-generated method stub
 	}
 
+	/**
+	 * Renders the background layer.
+	 * @param g Graphics context
+	 */
 	@Override
 	public void render(Graphics g) {
 		g.drawImage(background, 0, 0, null);
 	}
 
+	/**
+	 * Gets background's collision bounds.
+	 * Currently unused as background has no collision.
+	 * @return null as no collision is needed
+	 */
 	@Override
 	public Rectangle getBounds() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/**
+	 * Gets expanded collision bounds.
+	 * Currently unused as background has no collision.
+	 * @param ignoredA Ignored expansion parameter
+	 * @return null as no collision is needed
+	 */
+	public Rectangle getBounds(int ignoredA) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/**
+	 * Gets background's collision area.
+	 * Currently unused as background has no collision.
+	 * @return null as no collision is needed
+	 */
 	@Override
 	public Area getArea() {
 		// TODO Auto-generated method stub

@@ -13,42 +13,64 @@ import java.lang.Exception;
 import java.util.*;
 import java.util.List;
 
-//create CreateLoginForm class to create login form
-//class extends JFrame to create a window where our component add
-//class implements ActionListener to perform an action on button click
+/**
+ * The LoginForm class creates and manages the game's login interface.
+ * This form allows users to enter their username and either load an existing save file
+ * or create a new user profile. The form features a stylized interface with custom
+ * backgrounds, fonts, and colors to match the game's aesthetic.
+ * 
+ * Features:
+ * <ul>
+ *   <li>Username input field with custom styling</li>
+ *   <li>Automatic save file loading for existing users</li>
+ *   <li>New user profile creation with initial game progress</li>
+ *   <li>Persistent data storage using serialization</li>
+ *   <li>Custom themed UI elements matching game style</li>
+ * </ul>
+ */
 public class LoginForm extends JFrame implements ActionListener
 {
-    //initialize button, panel, label, and text field
+    /** Submit button for the login form. */
     JButton b1;
+    
+    /** Panel containing all form elements. */
     JPanel newPanel;
+    
+    /** Label displaying the username input prompt. */
     JLabel userLabel;
-    final JTextField  textField1;
+    
+    /** Text field for username input. */
+    final JTextField textField1;
 
-    //calling constructor
+    /**
+     * Constructs a new LoginForm with custom styling and layout.
+     * Sets up the form's visual elements, including background images,
+     * custom fonts, and color scheme.
+     */
     public LoginForm()
     {
         BufferedImageLoader loader = new BufferedImageLoader();
         Image background = loader.loadImage("/textures/ROCKS.png");
         Image icon = loader.loadImage("/textures/Terraformar.png");
 
-        //create label for username
+        // Create and style username label
         userLabel = new JLabel(new ImageIcon(background));
-        userLabel.setText("ENTER YOUR USERNAME");      //set label value for textField1
+        userLabel.setText("ENTER YOUR USERNAME");
         userLabel.setHorizontalTextPosition(JLabel.CENTER);
         userLabel.setVerticalTextPosition(JLabel.CENTER);
         userLabel.setBackground(new Color(125, 90, 41, 0));
         userLabel.setForeground(Color.WHITE);
         userLabel.setFont((new Font("VERDANA", Font.BOLD, 45)));
 
-        //create text field to get username from the user
-        textField1 = new JTextField(1);    //set length of the text
+        // Create and style username text field
+        textField1 = new JTextField(1);
         textField1.setBackground(new Color(254, 184, 84));
         textField1.setHorizontalAlignment(JLabel.CENTER);
         textField1.setForeground(Color.BLACK);
         textField1.setFont((new Font("VERDANA", Font.BOLD, 45)));
 
-        //create submit button
-        b1 = new JButton(new ImageIcon(background)); //set label to button
+        // Create and style submit button
+        b1 = new JButton(new ImageIcon(background));
         b1.setText("SUBMIT");
         b1.setBackground(new Color(125, 90, 41));
         b1.setHorizontalTextPosition(JLabel.CENTER);
@@ -57,18 +79,18 @@ public class LoginForm extends JFrame implements ActionListener
         b1.setSelectedIcon(new ImageIcon(background));
         b1.setFont((new Font("VERDANA", Font.BOLD, 45)));
 
-        //create panel to put form elements
+        // Create and style form panel
         newPanel = new JPanel(new GridLayout(3, 1));
         newPanel.setBackground(new Color(125, 90, 41));
         newPanel.setForeground(Color.WHITE);
         newPanel.setFont((new Font("VERDANA", Font.BOLD, 45)));
 
+        // Add components to panel
+        newPanel.add(userLabel);
+        newPanel.add(textField1);
+        newPanel.add(b1);
 
-        newPanel.add(userLabel);    //set username label to panel
-        newPanel.add(textField1);   //set text field to panel
-        newPanel.add(b1);           //set button to panel
-
-        //set border to panel
+        // Configure window properties
         add(newPanel, BorderLayout.CENTER);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -80,18 +102,26 @@ public class LoginForm extends JFrame implements ActionListener
         getRootPane().setDefaultButton(b1);
         setBackground(new Color(125, 90, 41));
 
-        //perform action on button click
-        b1.addActionListener(this);     //add action listener to button
-        setTitle("TERRAFORMAR!");        //set title to the login form
+        b1.addActionListener(this);
+        setTitle("TERRAFORMAR!");
     }
 
-    //define abstract method actionPerformed() which will be called on button click
-    public void actionPerformed(ActionEvent ae)     //pass action listener as a parameter
+    /**
+     * Handles form submission when the submit button is clicked.
+     * This method:
+     * 1. Retrieves the entered username
+     * 2. Loads existing user save files
+     * 3. Either loads an existing user's game or creates a new user profile
+     * 4. Handles serialization and deserialization of user data
+     *
+     * @param ae The ActionEvent triggered by the submit button
+     */
+    public void actionPerformed(ActionEvent ae)
     {
-        String userValue = textField1.getText();        //get user entered username from the textField1
+        String userValue = textField1.getText();
         if(userValue.isEmpty()) return;
 
-        //Load users
+        // Load existing users
         ArrayList<UserFiles> users = new ArrayList<>();
         try
         {
@@ -104,12 +134,10 @@ public class LoginForm extends JFrame implements ActionListener
                         System.out.println("File " + listOfFile.getName());
 
                         InputStream stream = new FileInputStream(listOfFile);
-
                         ObjectInputStream in = new ObjectInputStream(stream);
                         Object o = in.readObject();
                         System.out.println(o.getClass());
 
-                        // Method for deserialization of object
                         userFiles = (UserFiles) o;
 
                         in.close();
@@ -130,31 +158,34 @@ public class LoginForm extends JFrame implements ActionListener
             System.out.println(userValue + "'s data was not found.");
         }
 
+        // Check for existing user or create new one
         boolean existingUser = false;
         for(UserFiles userFile : users) {
             if(Objects.equals(userValue, userFile.username())) {
-                new  Game(userFile);
+                new Game(userFile);
                 this.setVisible(false);
                 existingUser = true;
                 break;
             }
         }
-        //check whether the credentials are authentic or not
+
+        // Create new user if not found
         if (!existingUser) {
-            UserFiles userFiles = new UserFiles(UUID.randomUUID().toString(), userValue, new ArrayList<>(List.of(new String[]{LevelID.LEVEL_A_I.group})), new HashMap<>());
+            UserFiles userFiles = new UserFiles(
+                UUID.randomUUID().toString(),
+                userValue,
+                new ArrayList<>(List.of(new String[]{LevelID.LEVEL_A_I.group})),
+                new HashMap<>()
+            );
 
             String filename = "saves/"+userFiles.uuid()+".data";
 
-            // Serialization
+            // Serialize new user data
             try
             {
-                //Saving of object in a file
                 FileOutputStream file = new FileOutputStream(filename);
                 ObjectOutputStream out = new ObjectOutputStream(file);
-
-                // Method for serialization of object
                 out.writeObject(userFiles);
-
                 out.close();
                 file.close();
 
@@ -166,7 +197,6 @@ public class LoginForm extends JFrame implements ActionListener
                 System.out.println("[SEVERE]: Creation or serialization of " + userFiles.username() + "' save data has failed!");
                 System.exit(1);
             }
-
         }
     }
 }

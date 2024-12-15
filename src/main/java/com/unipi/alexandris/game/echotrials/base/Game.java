@@ -32,23 +32,72 @@ import javafx.application.Platform;
 
 import javax.swing.*;
 
+/**
+ * The main Game class that manages the core game functionality.
+ * This class extends Canvas and implements Runnable to handle the game loop and rendering.
+ * It manages game states, resources, input handling, and level progression.
+ *
+ * Features include:
+ * <ul>
+ *   <li>Game loop management</li>
+ *   <li>Resource loading and management</li>
+ *   <li>Level loading and progression</li>
+ *   <li>Input handling (keyboard and mouse)</li>
+ *   <li>User data persistence</li>
+ *   <li>Speedrun mode</li>
+ *   <li>High score tracking</li>
+ * </ul>
+ */
 @SuppressWarnings(value = "unused")
 public class Game extends Canvas implements Runnable {
+
+    /** Serialization version UID for the Game class. */
     @Serial
     private static final long serialVersionUID = 5839527675529025230L;
-    private final UserFiles user;
-    private static Game active;
-    public static final ArrayList<String> unlockedLevels = new ArrayList<>();
-    private final ArrayList<GUIButton> guiElements = new ArrayList<>();
-    private static final BufferedImageLoader imageLoader = new BufferedImageLoader();
-    public record Images(BufferedImage loadingScreen, BufferedImage[] portalImages, BufferedImage backButton, BufferedImage highScoreButton, BufferedImage heart, BufferedImage bubble,
-                         BufferedImage brickImage, BufferedImage iceImage, BufferedImage waterImage, BufferedImage backgroundImage,
-                         BufferedImage[] spikeBlockImages, BufferedImage[] trapBlockImages,
-                         BufferedImage[] movingBlockImages, BufferedImage[] buttonBlockImages) {}
 
+    /** User data object containing progress, unlocked levels, and high scores. */
+    private final UserFiles user;
+
+    /** Reference to the currently active game instance. */
+    private static Game active;
+
+    /** List of levels that have been unlocked by the player. */
+    public static final ArrayList<String> unlockedLevels = new ArrayList<>();
+
+    /** List of GUI button elements in the game. */
+    private final ArrayList<GUIButton> guiElements = new ArrayList<>();
+
+    /** Utility for loading image resources. */
+    private static final BufferedImageLoader imageLoader = new BufferedImageLoader();
+
+    /**
+     * Record containing all game images and textures.
+     * Includes loading screens, portal animations, GUI elements, and game object textures.
+     */
+    public record Images(
+            BufferedImage loadingScreen,
+            BufferedImage[] portalImages,
+            BufferedImage backButton,
+            BufferedImage highScoreButton,
+            BufferedImage heart,
+            BufferedImage bubble,
+            BufferedImage brickImage,
+            BufferedImage iceImage,
+            BufferedImage waterImage,
+            BufferedImage backgroundImage,
+            BufferedImage[] spikeBlockImages,
+            BufferedImage[] trapBlockImages,
+            BufferedImage[] movingBlockImages,
+            BufferedImage[] buttonBlockImages
+    ) {}
+
+    /** Static collection of all game images loaded at startup. */
     public static final Images gameImages = new Images(
             imageLoader.loadImage("/textures/loading_screen1080p.png"),
-            new BufferedImage[] {imageLoader.loadImage("/textures/portal4.png"), imageLoader.loadImage("/textures/portal4Locked.png")},
+            new BufferedImage[] {
+                imageLoader.loadImage("/textures/portal4.png"),
+                imageLoader.loadImage("/textures/portal4Locked.png")
+            },
             imageLoader.loadImage("/textures/back.png"),
             imageLoader.loadImage("/textures/highscore.png"),
             imageLoader.loadImage("/textures/hearts4.png"),
@@ -57,41 +106,114 @@ public class Game extends Canvas implements Runnable {
             imageLoader.loadImage("/textures/ice2.png"),
             imageLoader.loadImage("/textures/water3.png"),
             imageLoader.loadImage("/textures/bgrnd5.png"),
-            new BufferedImage[] {imageLoader.loadImage("/textures/spikes3.png"), imageLoader.loadImage("/textures/ice_spikes1.png")},
-            new BufferedImage[] {imageLoader.loadImage("/textures/brick5.png"), imageLoader.loadImage("/textures/brick5.png")},
-            new BufferedImage[] {imageLoader.loadImage("/textures/brick5.png")},
-            new BufferedImage[] {imageLoader.loadImage("/textures/button1.png"), imageLoader.loadImage("/textures/button_pressed1.png")}
+            new BufferedImage[] {
+                imageLoader.loadImage("/textures/spikes3.png"),
+                imageLoader.loadImage("/textures/ice_spikes1.png")
+            },
+            new BufferedImage[] {
+                imageLoader.loadImage("/textures/brick5.png"),
+                imageLoader.loadImage("/textures/brick5.png")
+            },
+            new BufferedImage[] {
+                imageLoader.loadImage("/textures/brick5.png")
+            },
+            new BufferedImage[] {
+                imageLoader.loadImage("/textures/button1.png"),
+                imageLoader.loadImage("/textures/button_pressed1.png")
+            }
     );
+
+    /** Current X coordinate of the mouse cursor. */
     public static int cursorX;
+
+    /** Current Y coordinate of the mouse cursor. */
     public static int cursorY;
+
+    /** Collision area for solid blocks. */
     public static Area block = new Area();
+
+    /** Collision area for ice blocks. */
     public static Area ice = new Area();
+
+    /** Collision area for water blocks. */
     public static Area water = new Area();
+
+    /** Game window width in pixels. */
     public static final int WIDTH = 1920;
+
+    /** Game window height in pixels. */
     public static final int HEIGHT = 1080;
+
+    /** The game window frame. */
     public JFrame frame;
+
+    /** The game window wrapper. */
     public Window window;
+
+    /** List of hazard locations in the current level. */
     public static ArrayList<Integer> hazardsMap = new ArrayList<>();
+
+    /** Initial player X coordinate. */
     public static int i_p_x;
+
+    /** Initial player Y coordinate. */
     public static int i_p_y;
+
+    /** Number of bubble power-ups available. */
     public static int bubble_counter = 10;
+
+    /** Player's current health points. */
     public static int health_counter = 3;
+
+    /** Flag indicating if bubble shield is active. */
     public static boolean bubble_flag;
+
+    /** Reference to the player object. */
     public static Player player;
+
+    /** Reference to the level's goal portal. */
     public static PortalBlock goal;
+
+    /** Camera controller for the game view. */
     public static Camera camera;
+
+    /** Size multiplier for game objects. */
     public static final int multiplier = 48;
+
+    /** Flag indicating if the game is currently running. */
     private boolean running = false;
+
+    /** Handler for game objects and events. */
     private static final Handler handler = new Handler();
+
+    /** ID of the current level being played. */
     public static LevelID currentLevel;
+
+    /** Flag indicating if speedrun mode is active. */
     public static boolean SPEEDRUN = false;
+
+    /** Flag for debug mode. */
     public static final boolean DEBUG = false;
+
+    /** Title displayed during speedrun mode. */
     private static String speedrunTitle = "SPEEDRUN";
+
+    /** Seconds counter for speedrun timing. */
     private static int SECONDS = 0;
+
+    /** Milliseconds counter for speedrun timing. */
     private static int TIME = 0;
+
+    /** Current frames per second. */
     private long fps = 0L;
 
-    public Game(UserFiles user){
+    /**
+     * Constructs a new Game instance.
+     * Initializes the game with user data, sets up input handlers, and creates the game window.
+     *
+     * @param user The user data object containing game progress and settings
+     */
+    public Game(UserFiles user) {
         this.user = user;
         unlockedLevels.clear();
         unlockedLevels.addAll(user.unlockedLevels());
@@ -108,7 +230,10 @@ public class Game extends Canvas implements Runnable {
         guiElements.add(new HighScoreButton(160, 64, ID.Button, gameImages.highScoreButton));
     }
 
-
+    /**
+     * Restarts the game to its initial state.
+     * Resets health, speedrun mode, and returns to the level selector.
+     */
     public static void restart() {
         health_counter = 3;
         SPEEDRUN = false;
@@ -117,6 +242,10 @@ public class Game extends Canvas implements Runnable {
         loadLevel(LevelID.LEVEL_SELECTOR);
     }
 
+    /**
+     * Reloads the current level.
+     * Clears all objects and reloads the level from scratch.
+     */
     public static void reload() {
         handler.clear();
         player = null;
@@ -125,6 +254,12 @@ public class Game extends Canvas implements Runnable {
         camera = new Camera(0.0, 0.0, gameLevel.mapWidth(), gameLevel.mapHeight(), 48);
     }
 
+    /**
+     * Loads a specific level by its ID.
+     * Handles level initialization and camera setup.
+     *
+     * @param levelID The ID of the level to load
+     */
     public static void loadLevel(LevelID levelID) {
         if(levelID == LevelID.LEVEL_SELECTOR) {
             health_counter = 3;
@@ -141,6 +276,10 @@ public class Game extends Canvas implements Runnable {
         currentLevel = levelID;
     }
 
+    /**
+     * Loads the next level in sequence.
+     * Handles level progression, unlocking new levels, and speedrun mode transitions.
+     */
     public static void loadNext() {
         List<String> groups = List.of(new String[]{"A", "B", "C", "D", "E", "F", "G", "H", "I", "J"});
         List<String> latinNum = List.of(new String[]{"I", "II", "III", "IV", "V"});
@@ -185,6 +324,11 @@ public class Game extends Canvas implements Runnable {
         currentLevel = gameLevel.levelID();
     }
 
+    /**
+     * Retrieves the high scores for all levels.
+     *
+     * @return A HashMap containing level names and their corresponding high scores in MM:SS:MS format
+     */
     public static HashMap<String, String> getHighScores() {
         HashMap<String, String> scores = new HashMap<>();
         for(LevelID levelID : LevelID.values()) {
@@ -204,6 +348,12 @@ public class Game extends Canvas implements Runnable {
         return scores;
     }
 
+    /**
+     * Rounds a double value to two decimal places.
+     *
+     * @param number The number to round
+     * @return The rounded value
+     */
     private static double round(double number) {
         // Creating an object of DecimalFormat class
         DecimalFormat df_obj = new DecimalFormat("#.##");
@@ -211,17 +361,26 @@ public class Game extends Canvas implements Runnable {
         return Double.parseDouble(df_obj.format(number));
     }
 
+    /**
+     * Starts the game thread.
+     */
     public synchronized void start() {
         Thread thread = new Thread(this);
         thread.start();
         this.running = true;
     }
 
+    /**
+     * Exits the game safely.
+     */
     public static void exit() {
         assert active != null;
         active.stop();
     }
 
+    /**
+     * Stops the game thread and saves user data before exiting.
+     */
     public synchronized void stop() {
         if(save()) {
             this.running = false;
@@ -233,6 +392,11 @@ public class Game extends Canvas implements Runnable {
         }
     }
 
+    /**
+     * Saves the current user data to file.
+     *
+     * @return true if save was successful, false otherwise
+     */
     private boolean save() {
         String filename = "saves/"+user.uuid()+".data";
         // Serialization
@@ -421,7 +585,7 @@ public class Game extends Canvas implements Runnable {
 
         File directory = new File(PATH);
         if (! directory.exists()){
-            boolean _ = directory.mkdir();
+            boolean a = directory.mkdir();
         }
 
         try

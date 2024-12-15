@@ -8,12 +8,33 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Manages the foreground layer of game levels.
+ * Renders decorative elements and visual effects that appear in front of other game objects.
+ * Uses a tile-based system with support for multiple texture types and random variations.
+ */
 public class Foreground extends GameObject {
 	
+	/** Composite image containing all foreground elements */
 	BufferedImage foreground;
+	
+	/** Collection of tile maps defining foreground layout */
 	ArrayList<char[][]> maps;
+	
+	/** Collection of textures used for different tile types */
 	ArrayList<BufferedImage> images;
 
+	/**
+	 * Creates a new foreground layer with specified properties.
+	 * @param x Starting X coordinate
+	 * @param y Starting Y coordinate
+	 * @param id Object identifier
+	 * @param images Collection of tile textures
+	 * @param maps Collection of tile maps
+	 * @param multiplier Size multiplier for tiles
+	 * @param width Level width in tiles
+	 * @param height Level height in tiles
+	 */
 	public Foreground(int x, int y, ID id, ArrayList<BufferedImage> images, ArrayList<char[][]> maps, int multiplier, int width, int height) {
 		super(x, y, id);
 		this.maps = maps;
@@ -45,22 +66,40 @@ public class Foreground extends GameObject {
 		g.dispose();
 	}
 
+	/**
+	 * Updates foreground state.
+	 * Foreground is static and requires no updates.
+	 */
 	@Override
 	public void tick() {
 		// TODO Auto-generated method stub
 	}
 
+	/**
+	 * Renders the foreground layer.
+	 * @param g Graphics context
+	 */
 	@Override
 	public void render(Graphics g) {
 		g.drawImage(foreground, 0, 0, null);
 	}
 
+	/**
+	 * Gets collision bounds.
+	 * Foreground is decorative and has no collision.
+	 * @return null as foreground has no collision
+	 */
 	@Override
 	public Rectangle getBounds() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	/**
+	 * Gets collision area.
+	 * Foreground is decorative and has no collision.
+	 * @return null as foreground has no collision
+	 */
 	@Override
 	public Area getArea() {
 		// TODO Auto-generated method stub

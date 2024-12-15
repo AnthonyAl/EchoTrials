@@ -8,20 +8,45 @@ import java.awt.geom.Area;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 
+/**
+ * A dynamic block that can move in response to triggers or player interaction.
+ * Provides collision handling and movement mechanics for mobile platforms.
+ * Supports player transport and synchronized movement with other game objects.
+ */
 public class MovingBlock extends GameObject {
 
+	/** Block texture */
 	private final BufferedImage image;
+
+	/** Movement behavior callback */
 	private Runnable movement;
+
+	/** Previous X position for velocity calculation */
 	private double prevX = x;
+
+	/** Previous Y position for velocity calculation */
 	private double prevY = y;
+
+	/** Flag indicating player contact */
 	private boolean touchedPlayer = false;
 
+	/**
+	 * Creates a new moving block.
+	 * @param x Initial X position
+	 * @param y Initial Y position
+	 * @param id Object identifier
+	 * @param image Block texture
+	 */
 	public MovingBlock(int x, int y, ID id, BufferedImage image) {
 		super(x, y, id);
 		size = 48;
 		this.image = image;
 	}
 
+	/**
+	 * Updates block position and handles collisions.
+	 * Manages player interaction and platform movement.
+	 */
 	@Override
 	public void tick() {
 		if(Game.player == null) return;
@@ -103,33 +128,66 @@ public class MovingBlock extends GameObject {
 		}
 	}
 
+	/**
+	 * Renders the moving block.
+	 * @param g Graphics context
+	 */
 	@Override
 	public void render(Graphics g) {
 		g.drawImage(image, (int) x, (int) y, null);
 	}
 
+	/**
+	 * Gets block's collision bounds.
+	 * @return Rectangle representing block bounds
+	 */
 	@Override
 	public Rectangle getBounds() {
 		return new Rectangle((int) x, (int) y, size, size);
 	}
 	
+	/**
+	 * Gets expanded collision bounds.
+	 * @param a Expansion amount
+	 * @return Expanded rectangle bounds
+	 */
 	public Rectangle getBounds(int a) {
 		return new Rectangle((int) x - a, (int) y - a, size + a*2, size + a*2);
 	}
 
+	/**
+	 * Gets precise collision area.
+	 * @return Area for collision detection
+	 */
 	@Override
 	public Area getArea() {
 		return new Area(new Rectangle2D.Double(x, y, size, size));
 	}
 
+	/**
+	 * Sets the block's movement behavior.
+	 * @param movement Runnable defining movement pattern
+	 */
 	public void setMovement(Runnable movement) {
 		this.movement = movement;
 	}
 
+	/**
+	 * Gets the current movement behavior.
+	 * @return Movement callback
+	 */
 	public Runnable getMovement() {
 		return movement;
 	}
 
+	/**
+	 * Creates a rectangle for collision detection.
+	 * @param a X coordinate
+	 * @param b Y coordinate
+	 * @param c Width
+	 * @param d Height
+	 * @return Rectangle with specified dimensions
+	 */
 	public Rectangle getRectangle(double a, double b, double c, double d) {
 		return new Rectangle((int) a,(int) b, (int) c, (int) d);
 	}
