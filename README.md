@@ -7,6 +7,8 @@ The final level puts everything you’ve learned to the test, blending all previ
 
 (Note: This game is a work in progress, and additional levels and features are planned to expand the experience even further.)
 
+![Main Menu](/.github/resources/a2.png "Main Menu")
+
 ---
 
 ## Deep Dive
@@ -29,6 +31,8 @@ The implemented levels currently introduce the following mechanics:
 
 As previously mentioned, players must master these challenges before facing the final Bonus Level, which combines all the introduced concepts, or attempting the Speedrun Mode, a replayability feature designed for those eagerly awaiting new updates and fresh creative challenges.
 
+![Pits](/.github/resources/a4.png "Pits")
+
 ---
 
 ## Stages of Development: Idea Analysis
@@ -47,6 +51,8 @@ In addition to texture quality, a custom particle engine has been developed as p
 - **Wall Jumping**: A burst of particles to visually emphasize the action of jumping off a wall.
 - **Slipping on Ice**: Unique particle trails that illustrate the slippery nature of frozen environments.
 - **Spike Explosions**: A sharp burst of particles when the figure hits spikes, adding an impactful and satisfying visual cue.
+
+![Spike Explosions](/.github/resources/a9.png "Spike Explosions")
 
 This robust particle engine also lays the groundwork for future mechanics. Planned updates will introduce particle-based obstacles such as fire that burns or water that slows the figure down. These elements will further enrich the gameplay experience, making *Echo Trials* both visually engaging and mechanically diverse.
 
@@ -80,6 +86,8 @@ Each level introduces a unique theme designed to train players in a specific mec
 - **Level 3**: Pushing and Moving Platforms – Introduces platforms that may help or hinder, requiring players to assess and anticipate their movements.
 - **Level 4**: Movement Alteration – Messes with the player's sense of control, changing movement speed or inverting controls.
 
+![Ice](/.github/resources/a8.png "Ice")
+
 The final bonus level is a culmination of all the previously introduced mechanics and obstacles, blending them into a chaotic and demanding trial that requires mastery of all prior challenges.
 
 ### Sound and Graphical Design
@@ -92,6 +100,7 @@ As mentioned in the earlier analysis, *Echo Trials* makes significant strides in
     - Ice slip particles that visually communicate the slippery effect of frozen surfaces.
     - Spike explosions that provide dramatic feedback upon failure.
     - Future mechanics like fire or water-based obstacles are already planned, leveraging the robust capabilities of the particle engine to introduce visually stunning challenges.
+
 
 #### **Sound**:
 - The sound design in *Echo Trials* is equally thoughtful, with custom audio sampled directly by the developer, "Antitonius." Every sound effect—from the crunch of ice to the satisfying thud of a successful wall jump—has been crafted to perfectly match the game’s mechanics. The sound design not only enhances immersion but also serves as an important gameplay cue, helping players respond to obstacles intuitively.
